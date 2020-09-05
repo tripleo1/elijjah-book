@@ -17,7 +17,7 @@ and get up and running.  The Makefiles probably do not work.
 
 Much work is needed.
 
-See [Language Overview](elijjah.md) for more details on the language.
+See [Language Overview](language-overview.md) for more details on the language.
 
 All of this is a wwork in progress and your support would be appreciated.
 

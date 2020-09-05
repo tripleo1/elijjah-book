@@ -1,4 +1,8 @@
 # Table of contents
 
-* [Hello, World!](README.md)
+* [Introduction](README.md)
+
+* [Language Overview](language-overview.md)
+
+* [Hello, World!](hello.md)
 
