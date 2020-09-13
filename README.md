@@ -12,6 +12,7 @@ Other Software Required:
 * java-compiler \(java8\)
 
 The repo is currently buildable from maven, minus one testing failure. You can also import into Eclipse and IDEA and get up and running.
+The tests need to run run from the root directory, which is done automatically in maven but not IDEA.
 
 Much work is needed.
 
@@ -28,4 +29,6 @@ oluoluolu+elijah \(at\) gmail.com
 [GitBook: The Elijjah Book](https://oluoluolu-gh.gitbook.io/elijjah-book/)
 
 [Elijjah by Example](https://elijjah-by-example.github.io)
+
+[Elijjah by Example on GitBook](https://oluoluolu-gh.gitbook.io/elijjah-by-example/) (more readable)
 
