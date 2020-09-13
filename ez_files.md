@@ -16,4 +16,4 @@ end
 
 As you can see, you name the program with a program directive, and there is a set of library files in the directory library1.
 It also manually generates c code. It is not necessary to put this here, and sometimes even not recommended because of the 
-desire to have cross-plpatform code.
+desire to have cross-platform code.

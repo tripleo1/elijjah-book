@@ -2,30 +2,32 @@
 
 **Elijjah** is a [multi-paradigm](https://en.wikipedia.org/wiki/Multi-paradigm_programming_language "Multi-paradigm programming language") [systems and applications programming language](https://en.wikipedia.org/wiki/Systems_programming_language "Systems programming language") with an emphasis on making the programmer's life easier. It is statically typed while using type deduction where possible and it supports both functional and object oriented paradigms.
 
-It is intended to provide the power of C++, the expressibility of Python, and the utility of Java.  The code the reference compiler generates if C/C++ or Java is intended to complement each and every one of those in any combination.  It can reliably interact with Java libraries or C/C++ libraries like Swing/JavaFX, SWT, boost, or gtk and Qt.
+It is intended to provide the power of C++, the expressibility of Python, and the utility of Java.  The code the reference compiler generates in C/C++ or Java is intended to complement each and every one of those in any combination.  It can reliably interact with Java libraries or C/C++ libraries like Swing/JavaFX, SWT, boost, or gtk and Qt.
 
 ## Contents
 
-*   [1 History](#History)
-*   [2 Philosophy](#Philosophy)
-*   [3 Syntax](#Syntax)
-*   [4 Memory safety](#Memory_safety)
-*   [3 Syntax](#Syntax)
-    *   [3.1 Design and Features](#design-and-features)
-    *   [3.2 Ownership](#Ownership)
-    *   [3.3 Types and polymorphism](#Types_and_polymorphism)
-    *   [3.4 Main Entry Point](#main-entry-point)
-    *   [3.5 Extension Methods](#extension-methods)
-    *   [3.6 Operator Overloading](#operator-overloading)
-    *   [3.7 Higher Order Functions](#higher-order-functions)
-*   [4 Tools](#Tools)
-*   [5 Unimplemented Things](#unimplemented-things)
+- [Elijjah (programming language)](#elijjah-programming-language)
+  - [Contents](#contents)
+  - [History](#history)
+  - [Philosophy](#philosophy)
+  - [Syntax](#syntax)
+  - [Memory safety](#memory-safety)
+    - [Syntax](#syntax-1)
+    - [Design and Features](#design-and-features)
+    - [Ownership](#ownership)
+    - [Types and polymorphism](#types-and-polymorphism)
+    - [Main entry point](#main-entry-point)
+    - [Extension methods](#extension-methods)
+    - [Operator overloading](#operator-overloading)
+    - [Higher-order functions](#higher-order-functions)
+  - [Tools](#tools)
+    - [Unimplemented things](#unimplemented-things)
 
 ## History
 
 In the early 2000s the author became disillusioned with the then current state of the language landscape.  Namely the frustrating complexity of C++ and the frustrating simplicity of Java, arguably the two most popular languages at the time.
 
-Due to unforseen circumstances, the compiler is just now being produced and released, hopefully to widespread acclaim or niche acceptance.  The author hopes that Elijjah can achieve what Java, D and Vala could not.
+Due to unforeseen circumstances, the compiler is just now being produced and released, hopefully to widespread acclaim or niche acceptance.  The author hopes that Elijjah can achieve what Java, D and Vala could not.
 
 The language has evolved over time from a simple JavaScript clone to a full-fledged programming language fit to challenge today's top contenders.  
 
@@ -33,7 +35,7 @@ The language has evolved over time from a simple JavaScript clone to a full-fled
 
 The author states that Elijjah is designed to be an industrial strength object-oriented language, and a better language that C++ and Java, but to still be interoperable with either, allowing programmers to make a gradual transition to Elijjah.
 
-Semicolons are optional as a statement terminator , though whilespace is ignored in the current compiler,  eventually a newline should be enough to deduce that the statement has ended.
+Semicolons are optional as a statement terminator , though whitespace is ignored in the current compiler,  eventually a newline should be enough to deduce that the statement has ended.
 
 ## Syntax
 
@@ -43,7 +45,7 @@ A function is composed of expressions and statements.  Everything other than a f
 
 ## Memory safety
 
-Elijjah has an option for using a [garbage collector](https://en.wikipedia.org/wiki/Garbage_collection_%28computer_science%29#AUTOMATIC "Garbage collection (computer science)") of the prrogrammer's choice whwen using C/C++ backend, otherwise it uses the default model of its backend.
+Elijjah has an option for using a [garbage collector](https://en.wikipedia.org/wiki/Garbage_collection_%28computer_science%29#AUTOMATIC "Garbage collection (computer science)") of the programmer's choice when using C/C++ backend, otherwise it uses the default model of its backend.
 
 [Resource acquisition is initialization](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization "Resource acquisition is initialization") (RAII), and optional reference counting are both supported. 
 
@@ -53,7 +55,7 @@ Overall, the memory safety of your program depends on the backend used and the n
 
 ***************************
 
-Class members are public by default and classes themselves are open by default, though member access control can be fine grained, and classes can be prevented from derivarion by using the @Sealed annotation.
+Class members are public by default and classes themselves are open by default, though member access control can be fine grained, and classes can be prevented from derivation by using the @Sealed annotation.
 
 In addition to classes and methods (called member functions in Elijjah) of OOP, Elijjah also supports the use of functions without class instantiation using namespaces.  This can be useful when interacting with C.
 
@@ -69,19 +71,19 @@ It is hoped that Elijjah will be useful in concurrent systems though at this tim
 
 Maybe the language will evolve concurrency and safety features present in other languages like Rust and Erlang.  The programmer has fine-grained control of memory layout (using `struct`s) where applicable (meaning largely using the C/C++ backends, though transparent access to C/C++ objects is supported).  Performance of idiomatic Elijjah is comparable to that of idiomatic C++.
 
-Elijjah also supports const correctness and immutable funtions, where an object is not allowed to be modified in any way.
+Elijjah also supports const correctness and immutable functions, where an object is not allowed to be modified in any way.
 
 ### Ownership
 
-Maybe the `borrow` keywword will be implemented one day.
+Maybe the `borrow` keyword will be implemented one day.
 
 ### Types and polymorphism
 
-Where not explicit, the types of variables (and values honestly) are deduced by the compiler.  If this proves insufficient over time , a proper type inferencer will  be adopted.
+Where not explicit, the types of variables (and values honestly) are deduced by the compiler.  If this proves insufficient over time, a proper type inferencer will be adopted.
 
-Both function and classes can be given [generic](https://en.wikipedia.org/wiki/Generic_programming "Generic programming") [parameters](https://en.wikipedia.org/wiki/Parameter_%28computer_programming%29 "Parameter (computer programming)"), and class `signature`s can be used to require a class to implement a certain interface without raxing the type system.  TGhe implementation of generics is similar to the typical implementation of C++ templates: a separate copy of the code is generated for each instantiation. This is called monomorphization and contrasts with the [type erasure](https://en.wikipedia.org/wiki/Type_erasure "Type erasure") scheme typically used in Java and Haskell. The benefit of monomorphization is optimized code for each specific use case; the drawback is increased compile time and size of the resulting binaries.
+Both function and classes can be given [generic](https://en.wikipedia.org/wiki/Generic_programming "Generic programming") [parameters](https://en.wikipedia.org/wiki/Parameter_%28computer_programming%29 "Parameter (computer programming)"), and class `signature`s can be used to require a class to implement a certain interface without taxing the type system.  TGhe implementation of generics is similar to the typical implementation of C++ templates: a separate copy of the code is generated for each instantiation. This is called monomorphization and contrasts with the [type erasure](https://en.wikipedia.org/wiki/Type_erasure "Type erasure") scheme typically used in Java and Haskell. The benefit of monomorphization is optimized code for each specific use case; the drawback is increased compile time and size of the resulting binaries.
 
-`struct`s are used to control memory layout. Structs cannot fully participate in OOP aand member function on structs must be resolvable statically.
+`struct`s are used to control memory layout. Structs cannot fully participate in OOP and member function on structs must be resolvable statically.
 
 There are no static members in Elijjah.  This functionality is implemented by `namespace`s, each of which is a singleton and can be counted on to exist only once in an entire program. (Note that multi-threading behavior is undefined here.)
 
