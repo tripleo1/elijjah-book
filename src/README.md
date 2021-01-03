@@ -21,6 +21,7 @@ See [Language Overview](language-overview.md) for more details on the language.
 All of this is a work in progress and your support would be appreciated.
 
 oluoluolu+elijah \(at\) gmail.com
+[@tripleo33177393 Twitter](https://twitter.com/tripleo33177393)
 
 [google group](https://groups.google.com/forum/#!forum/elijjah)
 
@@ -28,7 +29,8 @@ oluoluolu+elijah \(at\) gmail.com
 
 [GitBook: The Elijjah Book](https://oluoluolu-gh.gitbook.io/elijjah-book/)
 
+[The Elijjah Book: mdbook](https://tripleo1.github.io/elijjah-book/) \(this one is better\)
+
 [Elijjah by Example](https://elijjah-by-example.github.io)
 
 [Elijjah by Example on GitBook](https://oluoluolu-gh.gitbook.io/elijjah-by-example/) (more readable)
-
