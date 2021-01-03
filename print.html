@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="language-overview.html"><strong aria-hidden="true">2.</strong> Language Overview</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">3.</strong> Hello, World!</a></li><li class="chapter-item expanded "><a href="ez_files.html"><strong aria-hidden="true">4.</strong> Ez Files</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#the-elijjah-book" id="the-elijjah-book">The Elijjah Book</a></h1>
+<p>Elijjah is a high-level language suitable for replacement Java and C++. It is meant to integrate into current C and Java projects. It will feature a REPL and a graphical environment as well, along the lines Smalltalk/Tunes Slate.</p>
+<p>It is free software intended for use on all systems, including GNU/Linux.</p>
+<p>Other Software Required:</p>
+<ul>
+<li>antlr (included)</li>
+<li>javassist (included, but not used)</li>
+<li>python (not yet)</li>
+<li>java-compiler (java8)</li>
+</ul>
+<p>The repo is currently buildable from maven, minus one testing failure. You can also import into Eclipse and IDEA and get up and running.
+The tests need to run run from the root directory, which is done automatically in maven but not IDEA.</p>
+<p>Much work is needed.</p>
+<p>See <a href="language-overview.html">Language Overview</a> for more details on the language.</p>
+<p>All of this is a work in progress and your support would be appreciated.</p>
+<p>oluoluolu+elijah (at) gmail.com</p>
+<p><a href="https://groups.google.com/forum/#!forum/elijjah">google group</a></p>
+<p><a href="https://gitlab.com/elijah-team/elijah-lang/-/wikis/home">wiki</a></p>
+<p><a href="https://oluoluolu-gh.gitbook.io/elijjah-book/">GitBook: The Elijjah Book</a></p>
+<p><a href="https://elijjah-by-example.github.io">Elijjah by Example</a></p>
+<p><a href="https://oluoluolu-gh.gitbook.io/elijjah-by-example/">Elijjah by Example on GitBook</a> (more readable)</p>
+<h1><a class="header" href="#elijjah-programming-language" id="elijjah-programming-language">Elijjah (programming language)</a></h1>
+<p><strong>Elijjah</strong> is a <a href="https://en.wikipedia.org/wiki/Multi-paradigm_programming_language" title="Multi-paradigm programming language">multi-paradigm</a> <a href="https://en.wikipedia.org/wiki/Systems_programming_language" title="Systems programming language">systems and applications programming language</a> with an emphasis on making the programmer's life easier. It is statically typed while using type deduction where possible and it supports both functional and object oriented paradigms.</p>
+<p>It is intended to provide the power of C++, the expressibility of Python, and the utility of Java.  The code the reference compiler generates in C/C++ or Java is intended to complement each and every one of those in any combination.  It can reliably interact with Java libraries or C/C++ libraries like Swing/JavaFX, SWT, boost, or gtk and Qt.</p>
+<h2><a class="header" href="#contents" id="contents">Contents</a></h2>
+<ul>
+<li><a href="language-overview.html#elijjah-programming-language">Elijjah (programming language)</a>
+<ul>
+<li><a href="language-overview.html#contents">Contents</a></li>
+<li><a href="language-overview.html#history">History</a></li>
+<li><a href="language-overview.html#philosophy">Philosophy</a></li>
+<li><a href="language-overview.html#syntax">Syntax</a></li>
+<li><a href="language-overview.html#memory-safety">Memory safety</a>
+<ul>
+<li><a href="language-overview.html#syntax-1">Syntax</a></li>
+<li><a href="language-overview.html#design-and-features">Design and Features</a></li>
+<li><a href="language-overview.html#ownership">Ownership</a></li>
+<li><a href="language-overview.html#types-and-polymorphism">Types and polymorphism</a></li>
+<li><a href="language-overview.html#main-entry-point">Main entry point</a></li>
+<li><a href="language-overview.html#extension-methods">Extension methods</a></li>
+<li><a href="language-overview.html#operator-overloading">Operator overloading</a></li>
+<li><a href="language-overview.html#higher-order-functions">Higher-order functions</a></li>
+</ul>
+</li>
+<li><a href="language-overview.html#tools">Tools</a>
+<ul>
+<li><a href="language-overview.html#unimplemented-things">Unimplemented things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#history" id="history">History</a></h2>
+<p>In the early 2000s the author became disillusioned with the then current state of the language landscape.  Namely the frustrating complexity of C++ and the frustrating simplicity of Java, arguably the two most popular languages at the time.</p>
+<p>Due to unforeseen circumstances, the compiler is just now being produced and released, hopefully to widespread acclaim or niche acceptance.  The author hopes that Elijjah can achieve what Java, D and Vala could not.</p>
+<p>The language has evolved over time from a simple JavaScript clone to a full-fledged programming language fit to challenge today's top contenders.</p>
+<h2><a class="header" href="#philosophy" id="philosophy">Philosophy</a></h2>
+<p>The author states that Elijjah is designed to be an industrial strength object-oriented language, and a better language that C++ and Java, but to still be interoperable with either, allowing programmers to make a gradual transition to Elijjah.</p>
+<p>Semicolons are optional as a statement terminator , though whitespace is ignored in the current compiler,  eventually a newline should be enough to deduce that the statement has ended.</p>
+<h2><a class="header" href="#syntax" id="syntax">Syntax</a></h2>
+<p>The concrete syntax of Elijjah is similar to C/C++ and Java with hints from JavaScript, Python, and Eiffel.  Blocks of code are delimited by curly braces and control flow keywords such as <code>if</code>, <code>else</code>, and <code>while</code> are allowed.  As of now <code>for</code> is not supported and <code>foreach</code> is available as <code>iterate</code>.</p>
+<p>A function is composed of expressions and statements.  Everything other than a function call or a variable assignment is a statement.  A function need not end with a return statement (if enabled), but the return value must be assigned to a special variable <code>Result</code>.</p>
+<h2><a class="header" href="#memory-safety" id="memory-safety">Memory safety</a></h2>
+<p>Elijjah has an option for using a <a href="https://en.wikipedia.org/wiki/Garbage_collection_%28computer_science%29#AUTOMATIC" title="Garbage collection (computer science)">garbage collector</a> of the programmer's choice when using C/C++ backend, otherwise it uses the default model of its backend.</p>
+<p><a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization" title="Resource acquisition is initialization">Resource acquisition is initialization</a> (RAII), and optional reference counting are both supported. </p>
+<p>Overall, the memory safety of your program depends on the backend used and the non-abuse of features like <code>C.Pointer</code> and <code>Pointer</code> (and unsafe if implemented.)</p>
+<h3><a class="header" href="#syntax-1" id="syntax-1">Syntax</a></h3>
+<hr />
+<p>Class members are public by default and classes themselves are open by default, though member access control can be fine grained, and classes can be prevented from derivation by using the @Sealed annotation.</p>
+<p>In addition to classes and methods (called member functions in Elijjah) of OOP, Elijjah also supports the use of functions without class instantiation using namespaces.  This can be useful when interacting with C.</p>
+<p>Semicolons are optional as a statement terminator; in most cases a newline is sufficient for the compiler to deduce that the statement has ended.</p>
+<p>Elijjah variable declarations and parameter lists have the data type (optionally, and then inferred) come after the variable name (and with a colon), similar to Pascal.</p>
+<p>Variables in Elijjah can be immutable, declared with the <code>val</code> keyword, or mutable, declared with the <code>var</code> keyword.</p>
+<h3><a class="header" href="#design-and-features" id="design-and-features">Design and Features</a></h3>
+<p>It is hoped that Elijjah will be useful in concurrent systems though at this time no features specially exist to facilitate this,  The main safety feature of Elijjah is a more evolved type system using <code>datatype</code> and <code>match</code> and providing the now popular Option type. (called Maybe).</p>
+<p>Maybe the language will evolve concurrency and safety features present in other languages like Rust and Erlang.  The programmer has fine-grained control of memory layout (using <code>struct</code>s) where applicable (meaning largely using the C/C++ backends, though transparent access to C/C++ objects is supported).  Performance of idiomatic Elijjah is comparable to that of idiomatic C++.</p>
+<p>Elijjah also supports const correctness and immutable functions, where an object is not allowed to be modified in any way.</p>
+<h3><a class="header" href="#ownership" id="ownership">Ownership</a></h3>
+<p>Maybe the <code>borrow</code> keyword will be implemented one day.</p>
+<h3><a class="header" href="#types-and-polymorphism" id="types-and-polymorphism">Types and polymorphism</a></h3>
+<p>Where not explicit, the types of variables (and values honestly) are deduced by the compiler.  If this proves insufficient over time, a proper type inferencer will be adopted.</p>
+<p>Both function and classes can be given <a href="https://en.wikipedia.org/wiki/Generic_programming" title="Generic programming">generic</a> <a href="https://en.wikipedia.org/wiki/Parameter_%28computer_programming%29" title="Parameter (computer programming)">parameters</a>, and class <code>signature</code>s can be used to require a class to implement a certain interface without taxing the type system.  TGhe implementation of generics is similar to the typical implementation of C++ templates: a separate copy of the code is generated for each instantiation. This is called monomorphization and contrasts with the <a href="https://en.wikipedia.org/wiki/Type_erasure" title="Type erasure">type erasure</a> scheme typically used in Java and Haskell. The benefit of monomorphization is optimized code for each specific use case; the drawback is increased compile time and size of the resulting binaries.</p>
+<p><code>struct</code>s are used to control memory layout. Structs cannot fully participate in OOP and member function on structs must be resolvable statically.</p>
+<p>There are no static members in Elijjah.  This functionality is implemented by <code>namespace</code>s, each of which is a singleton and can be counted on to exist only once in an entire program. (Note that multi-threading behavior is undefined here.)</p>
+<h3><a class="header" href="#main-entry-point" id="main-entry-point">Main entry point</a></h3>
+<p>The entry point for every program is a class called Main and a function called main, and must not be part of a namespace or class.  Other considerations exist for dlls and maybe applets or something.  You must get system level arguments by inheriting Arguments class.  In addition, the file should be in a directory by itself.  There are no other file restrictions.</p>
+<h3><a class="header" href="#extension-methods" id="extension-methods">Extension methods</a></h3>
+<p>Similar to C# and Kotlin (and conceived independently), Elijjah allows a user to add methods to any class without the formalities of creating a derived class with new methods. Instead, Elijjah adds the concept of an <a href="https://en.wikipedia.org/wiki/Extension_method" title="Extension method">extension method</a> which allows a function to be &quot;glued&quot; onto the public method list of any class without being formally placed inside of the class. In other words, an extension method is a helper method that has access to all the public interface of a class which it can use to create a new method interface to a target class and this method will appear exactly like a method of the class, appearing as part of code completion inspection of class methods. For example:</p>
+<pre><code> package MyStringExtensions
+
+extend String { 
+  def lastChar(): Char = get(Length - 1)
+}
+ 
+ &gt;&gt;&gt; println(&quot;Elijjah&quot;.lastChar())
+</code></pre>
+<p>This means a user can package a customization layer of a library into a namespace which is subsequently imported for use in other modules.</p>
+<h3><a class="header" href="#operator-overloading" id="operator-overloading">Operator overloading</a></h3>
+<p>Operator overloading is accomplished in the same fashion as Python, by implementing a specially named function, such as <code>__add__</code>, <code>__lshift__</code>, <code>__divide__</code>, etc.</p>
+<p>Note that constructors are declared with the <code>constructor</code> keyword (shortcut <code>ctor</code>), and destructors are declared with the <code>destructor</code> keyword (shortcut <code>dtor</code>).</p>
+<h3><a class="header" href="#higher-order-functions" id="higher-order-functions">Higher-order functions</a></h3>
+<p>Elijjah provides support for <a href="https://en.wikipedia.org/wiki/Higher_order_functions" title="Higher order functions">higher order functions</a> and <a href="https://en.wikipedia.org/wiki/Anonymous_functions" title="Anonymous functions">anonymous functions</a> or lambdas.</p>
+<pre><code>// the following function takes a lambda, f, and executes f passing it the string, &quot;lambda&quot;
+// note that (s: String) -&gt; Unit indicates a lambda with a String parameter and Unit return type
+class Foo {
+  executeLambda(f: function(s: String) -&gt; Unit) {
+    f(&quot;lambda&quot;)
+  }
+}
+</code></pre>
+<p>Lambdas are declared using braces, <code>{|| }</code> . If a lambda takes parameters, they are declared within the <code>||</code> a la Smalltalk.</p>
+<pre><code class="language-//thefollowingstatementdefinesalambdathattakesasingleparameterandpassesittotheprintlnfunction">val l s= { |c : Maybe[Any]|  println(c.unwrap()) } }
+
+probably should be:
+
+val l s= { |c : Maybe[Any]|  match c {Some[d:Any] {println(d)} _ {} } }
+// lambdas with no parameters may simply be defined using { }
+val l2 = { || print(&quot;no parameters&quot;) }
+</code></pre>
+<h2><a class="header" href="#tools" id="tools">Tools</a></h2>
+<ul>
+<li>Integration with common Java build tools is planned including <a href="https://en.wikipedia.org/wiki/Apache_Maven" title="Apache Maven">Apache Maven</a>, <a href="https://en.wikipedia.org/wiki/Apache_Ant" title="Apache Ant">Apache Ant</a>, and <a href="https://en.wikipedia.org/wiki/Gradle" title="Gradle">Gradle</a>.
+Also support for Cmake and Bazel.  Integration with GObject and Python are planned features.</li>
+</ul>
+<h3><a class="header" href="#unimplemented-things" id="unimplemented-things">Unimplemented things</a></h3>
+<ul>
+<li>Kotlin/Python's spread (*) operator</li>
+<li>Kotlin Deconstructor methods</li>
+<li>Python multiple assignment ( const (x, y, z) coming soon)</li>
+<li>String interpolation (uses Python method (%); ${scope} coming)</li>
+<li>Kotlin/Groovy safe navigation, elvis operator</li>
+<li>Kotlin overly complex hello world exapmle</li>
+<li>REPL</li>
+</ul>
+<h1><a class="header" href="#hello-world" id="hello-world">Hello, World!</a></h1>
+<pre><code class="language-text">class Main {
+  main() {
+    println(&quot;Hello, World!&quot;)
+  }
+}
+</code></pre>
+<p>In <strong>Elijjah</strong>, the main class is always called <code>Main</code> and must have a function <code>main</code> for the entry point.  <code>println</code> is just a function in the standard library.</p>
+<h1><a class="header" href="#ez-files" id="ez-files">Ez Files</a></h1>
+<p>To compile <strong>Elijjah</strong> source code, you need to create an .ez file.  The syntax is simple.</p>
+<pre><code>program program_name
+
+lib
+    library1: &quot;library1&quot;
+
+generate
+    lang: &quot;c&quot;
+
+end
+</code></pre>
+<p>In the <code>lib</code> part, it is necessary to list all directories where <strong>Elijjah</strong> code resides, as this is where the compiler will look
+for source.  Filenames in <strong>Elijjah</strong> have no meaning and there is no set directory structure.</p>
+<p>As you can see, you name the program with a <code>program</code> directive, and there is a set of library files in the directory library1.
+It also manually generates c code. It is not necessary to put this here, and sometimes even not recommended because of the 
+desire to have cross-platform code.</p>
+<p>Instead of a <code>program</code> directive, you can also put <code>shared</code> for shared (dynamic) libraries or <code>library</code> for static libraries.
+Note that depending on your program dependencies, you may need to use a <code>shared</code> directive.  If <code>library</code> is specified by default, 
+you cann override this in the specification section.</p>
+<pre><code>program program_name2
+
+lib
+    command: &quot;.&quot;
+    library1: &quot;..&quot;
+    library_lgpl: (&quot;library2&quot;, &quot;0.3.4&quot;) [
+        shared: true
+    ]
+    library_java: &quot;library3&quot; [
+        only_gen: java
+//        maven: (&quot;x:y:z&quot;, &quot;1.1.0&quot;)
+    ]
+
+generate
+//    lang: &quot;c&quot;
+
+end
+</code></pre>
+<p>Note here that <code>program_name2.elijah</code> is in the current directory, alongside it's <code>.ez</code> file, with common files it may share with
+other programs in the parent directory. It loads <code>library2</code> by <a href="el_get.html">elget</a> with a specific version that must always be specified.
+This library is overridded as above to be linked dynamically as described above.  And finally, on Java outputs, it processes a
+special directory <code>library3</code>.  The syntax to add maven dependencies is commented out above - in this case the <code>library3</code> will be ignored, 
+and the directory wont be processed.  Finally <code>lang</code> is commented out in the <code>generate</code> section because of the cross-platform nature of the 
+program here.  Processing with the Java native version of the compiler <code>eljc</code> will by default genereate a Java project and with the C-native
+version <code>elcc</code> will produce a C project.  This can be overridden in both cases by using the <code>--gen</code> command-line oeprator.</p>
+<blockquote>
+<p>Talk about config files and ifdef</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
