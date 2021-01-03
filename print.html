@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="language-overview.html"><strong aria-hidden="true">2.</strong> Language Overview</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">3.</strong> Hello, World!</a></li><li class="chapter-item expanded "><a href="ez_files.html"><strong aria-hidden="true">4.</strong> Ez Files</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="language-overview.html">Language Overview</a></li><li class="chapter-item expanded "><a href="tools.html"><strong aria-hidden="true">1.</strong> Tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="el_get.html"><strong aria-hidden="true">1.1.</strong> elget</a></li><li class="chapter-item expanded "><a href="el_doc.html"><strong aria-hidden="true">1.2.</strong> The Documentation Generator</a></li><li class="chapter-item expanded "><a href="el_ls.html"><strong aria-hidden="true">1.3.</strong> The Language Server</a></li><li class="chapter-item expanded "><a href="el_play.html"><strong aria-hidden="true">1.4.</strong> The Playground</a></li></ol></li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.1.</strong> Hello, World!</a></li><li class="chapter-item expanded "><a href="building_with_elijjah.html"><strong aria-hidden="true">2.2.</strong> Building with Elijjah</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ez_files.html"><strong aria-hidden="true">2.2.1.</strong> Ez Files</a></li><li class="chapter-item expanded "><a href="config_files.html"><strong aria-hidden="true">2.2.2.</strong> Config Files</a></li><li class="chapter-item expanded "><a href="el_get.html"><strong aria-hidden="true">2.2.3.</strong> elget</a></li><li class="chapter-item expanded "><a href="package_management.html"><strong aria-hidden="true">2.2.4.</strong> Package Management</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -180,10 +180,12 @@ The tests need to run run from the root directory, which is done automatically i
 <p>Much work is needed.</p>
 <p>See <a href="language-overview.html">Language Overview</a> for more details on the language.</p>
 <p>All of this is a work in progress and your support would be appreciated.</p>
-<p>oluoluolu+elijah (at) gmail.com</p>
+<p>oluoluolu+elijah (at) gmail.com
+<a href="https://twitter.com/tripleo33177393">@tripleo33177393 Twitter</a></p>
 <p><a href="https://groups.google.com/forum/#!forum/elijjah">google group</a></p>
 <p><a href="https://gitlab.com/elijah-team/elijah-lang/-/wikis/home">wiki</a></p>
 <p><a href="https://oluoluolu-gh.gitbook.io/elijjah-book/">GitBook: The Elijjah Book</a></p>
+<p><a href="https://tripleo1.github.io/elijjah-book/">The Elijjah Book: mdbook</a> (this one is better)</p>
 <p><a href="https://elijjah-by-example.github.io">Elijjah by Example</a></p>
 <p><a href="https://oluoluolu-gh.gitbook.io/elijjah-by-example/">Elijjah by Example on GitBook</a> (more readable)</p>
 <h1><a class="header" href="#elijjah-programming-language" id="elijjah-programming-language">Elijjah (programming language)</a></h1>
@@ -299,6 +301,49 @@ Also support for Cmake and Bazel.  Integration with GObject and Python are plann
 <li>Kotlin overly complex hello world exapmle</li>
 <li>REPL</li>
 </ul>
+<h1><a class="header" href="#tools-1" id="tools-1">Tools</a></h1>
+<h2><a class="header" href="#the-library-retriever" id="the-library-retriever">The Library Retriever</a></h2>
+<p><strong>elget</strong> downloads <strong>Elijjah</strong> libraries from the network based on cues from an <code>.ez</code> file.</p>
+<blockquote>
+<p>This is not currently implemented.</p>
+</blockquote>
+<h2><a class="header" href="#the-documentation-generator" id="the-documentation-generator">The Documentation Generator</a></h2>
+<p><strong>eldoc</strong> takes docstrings and produces nice documentation for your <strong>Elijjah</strong> programs and libraries.</p>
+<p>It gets the documentation from docstrings, not comments.</p>
+<blockquote>
+<p>This is not currently implemented.</p>
+</blockquote>
+<h1><a class="header" href="#the-language-server" id="the-language-server">The Language Server</a></h1>
+<p>An implementation of the <a href="https://en.wikipedia.org/wiki/Language_Server_Protocol">Language Server Protocol</a> for less than full-blown editors.
+This probably won't be necessary on IntelliJ IDEA (which I hope to add support for) or Eclipse IDE, but then again who wants to do all that work?</p>
+<blockquote>
+<p>This is not impemented yet.</p>
+</blockquote>
+<h1><a class="header" href="#the-playground" id="the-playground">The Playground</a></h1>
+<p>It is intended that <strong>Elijjah</strong> comes with an advanced playground tool to allow real-time interaction
+with programs.</p>
+<p>The playground is meant to support exploration of examples of code.</p>
+<p>This is meant to be along the lines of XCode's playground, with variable values on the right side of the screen.</p>
+<h2><a class="header" href="#prototype" id="prototype">Prototype</a></h2>
+<p>Tabs:</p>
+<ul>
+<li><strong>Code</strong>: Shows code in a simple editor with tabs</li>
+<li><strong>Libraries</strong>: A graphical <code>.ez</code> file editor</li>
+<li><strong>Wiki</strong>: Enabling documentation</li>
+<li><strong>Versions</strong>: Integrated Git (not really necessary) and Version Control</li>
+<li><strong>Runs</strong>: Controlled input (command line, filesystem, environment variables, random seed)</li>
+<li><strong>Explorer</strong>: A reversible debugger</li>
+</ul>
+<blockquote>
+<p>This is obviously not implemented yet and will be alot of work.
+It also smells like an IDE.</p>
+</blockquote>
+<h1><a class="header" href="#getting-started" id="getting-started">Getting Started</a></h1>
+<ul>
+<li><a href="hello.html">Hello, World!</a></li>
+<li><a href="building_with_elijjah.html">Building with Elijjah</a></li>
+<li><a href="hello2.html">Hello, World! Part 2</a></li>
+</ul>
 <h1><a class="header" href="#hello-world" id="hello-world">Hello, World!</a></h1>
 <pre><code class="language-text">class Main {
   main() {
@@ -307,6 +352,26 @@ Also support for Cmake and Bazel.  Integration with GObject and Python are plann
 }
 </code></pre>
 <p>In <strong>Elijjah</strong>, the main class is always called <code>Main</code> and must have a function <code>main</code> for the entry point.  <code>println</code> is just a function in the standard library.</p>
+<p>Please note that the main class must be in the unnamed package, and there can only be one per compilation, lest a Compiler Error.</p>
+<h1><a class="header" href="#building-with-elijjah" id="building-with-elijjah">Building with Elijjah</a></h1>
+<p><strong>Elijjah</strong> includes a built-in build system for native code, and generates build files for the generated code.
+This can be ant files, maven files, gradle files, Bazel files, CMake files, Meson files or normal Makefiles.
+I'm sure I'm missing one or two.</p>
+<p>The <code>__PACKAGE__</code> namespace is for generating Operating System packages.
+The <code>__BUILD__</code> namespace is for generating Build System files.
+And the <code>__PROJECT__</code> namespace is for describing the Project in ways the <code>.ez</code> file doesn't provide for.</p>
+<p>It is expected that &quot;plugin&quot;-style support will be added at a later date to support all of this.</p>
+<ul>
+<li><a href="ez_files.html">Ez Files</a></li>
+<li><a href="config_files.html">Config Files</a></li>
+<li><a href="el_get.html">elget</a></li>
+<li><a href="package_management.html">Package Management</a></li>
+</ul>
+<p>See <a href="special_namespaces.html">Special Namespaces</a></p>
+<blockquote>
+<p>Build generation is not implemented yet.
+This includes the special namespaces.</p>
+</blockquote>
 <h1><a class="header" href="#ez-files" id="ez-files">Ez Files</a></h1>
 <p>To compile <strong>Elijjah</strong> source code, you need to create an .ez file.  The syntax is simple.</p>
 <pre><code>program program_name
@@ -355,6 +420,29 @@ version <code>elcc</code> will produce a C project.  This can be overridden in b
 <blockquote>
 <p>Talk about config files and ifdef</p>
 </blockquote>
+<h2><a class="header" href="#config-files" id="config-files">Config Files</a></h2>
+<p>Config files allow a programmer to set variables that are processed by <code>.ez</code> files. </p>
+<p>They are the equivalent of <code>-D</code> directives to the C compiler and properties in maven.</p>
+<p>Consider them a form of build profiles</p>
+<h3><a class="header" href="#format" id="format">Format</a></h3>
+<pre><code>values = [&quot;use_ssl&quot;, &quot;no_frob&quot;]
+
+[defines]
+x = 1
+y = 2
+</code></pre>
+<p>The format only supports the <code>values</code> array and <code>defines</code> dictionary/map. Everything else is ignored.</p>
+<blockquote>
+<p>I am not sure what to make of this. It seems the build system is getting complicated.
+It is also not currently implemented in the reference compiler.</p>
+</blockquote>
+<h2><a class="header" href="#the-library-retriever-1" id="the-library-retriever-1">The Library Retriever</a></h2>
+<p><strong>elget</strong> downloads <strong>Elijjah</strong> libraries from the network based on cues from an <code>.ez</code> file.</p>
+<blockquote>
+<p>This is not currently implemented.</p>
+</blockquote>
+<h1><a class="header" href="#package-management" id="package-management">Package Management</a></h1>
+<p>There is no centralized package management as of yet, but it should not be a problem to get something simple up and running on GitHub or Heroku.</p>
 
                     </main>
 

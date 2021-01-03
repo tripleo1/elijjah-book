@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction</title>
+        <title>The Language Server</title>
         
         
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html" class="active">Introduction</a></li><li class="chapter-item expanded affix "><a href="language-overview.html">Language Overview</a></li><li class="chapter-item expanded "><a href="tools.html"><strong aria-hidden="true">1.</strong> Tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="el_get.html"><strong aria-hidden="true">1.1.</strong> elget</a></li><li class="chapter-item expanded "><a href="el_doc.html"><strong aria-hidden="true">1.2.</strong> The Documentation Generator</a></li><li class="chapter-item expanded "><a href="el_ls.html"><strong aria-hidden="true">1.3.</strong> The Language Server</a></li><li class="chapter-item expanded "><a href="el_play.html"><strong aria-hidden="true">1.4.</strong> The Playground</a></li></ol></li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.1.</strong> Hello, World!</a></li><li class="chapter-item expanded "><a href="building_with_elijjah.html"><strong aria-hidden="true">2.2.</strong> Building with Elijjah</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ez_files.html"><strong aria-hidden="true">2.2.1.</strong> Ez Files</a></li><li class="chapter-item expanded "><a href="config_files.html"><strong aria-hidden="true">2.2.2.</strong> Config Files</a></li><li class="chapter-item expanded "><a href="el_get.html"><strong aria-hidden="true">2.2.3.</strong> elget</a></li><li class="chapter-item expanded "><a href="package_management.html"><strong aria-hidden="true">2.2.4.</strong> Package Management</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="language-overview.html">Language Overview</a></li><li class="chapter-item expanded "><a href="tools.html"><strong aria-hidden="true">1.</strong> Tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="el_get.html"><strong aria-hidden="true">1.1.</strong> elget</a></li><li class="chapter-item expanded "><a href="el_doc.html"><strong aria-hidden="true">1.2.</strong> The Documentation Generator</a></li><li class="chapter-item expanded "><a href="el_ls.html" class="active"><strong aria-hidden="true">1.3.</strong> The Language Server</a></li><li class="chapter-item expanded "><a href="el_play.html"><strong aria-hidden="true">1.4.</strong> The Playground</a></li></ol></li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.1.</strong> Hello, World!</a></li><li class="chapter-item expanded "><a href="building_with_elijjah.html"><strong aria-hidden="true">2.2.</strong> Building with Elijjah</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ez_files.html"><strong aria-hidden="true">2.2.1.</strong> Ez Files</a></li><li class="chapter-item expanded "><a href="config_files.html"><strong aria-hidden="true">2.2.2.</strong> Config Files</a></li><li class="chapter-item expanded "><a href="el_get.html"><strong aria-hidden="true">2.2.3.</strong> elget</a></li><li class="chapter-item expanded "><a href="package_management.html"><strong aria-hidden="true">2.2.4.</strong> Package Management</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -163,38 +163,25 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#the-elijjah-book" id="the-elijjah-book">The Elijjah Book</a></h1>
-<p>Elijjah is a high-level language suitable for replacement Java and C++. It is meant to integrate into current C and Java projects. It will feature a REPL and a graphical environment as well, along the lines Smalltalk/Tunes Slate.</p>
-<p>It is free software intended for use on all systems, including GNU/Linux.</p>
-<p>Other Software Required:</p>
-<ul>
-<li>antlr (included)</li>
-<li>javassist (included, but not used)</li>
-<li>python (not yet)</li>
-<li>java-compiler (java8)</li>
-</ul>
-<p>The repo is currently buildable from maven, minus one testing failure. You can also import into Eclipse and IDEA and get up and running.
-The tests need to run run from the root directory, which is done automatically in maven but not IDEA.</p>
-<p>Much work is needed.</p>
-<p>See <a href="language-overview.html">Language Overview</a> for more details on the language.</p>
-<p>All of this is a work in progress and your support would be appreciated.</p>
-<p>oluoluolu+elijah (at) gmail.com
-<a href="https://twitter.com/tripleo33177393">@tripleo33177393 Twitter</a></p>
-<p><a href="https://groups.google.com/forum/#!forum/elijjah">google group</a></p>
-<p><a href="https://gitlab.com/elijah-team/elijah-lang/-/wikis/home">wiki</a></p>
-<p><a href="https://oluoluolu-gh.gitbook.io/elijjah-book/">GitBook: The Elijjah Book</a></p>
-<p><a href="https://tripleo1.github.io/elijjah-book/">The Elijjah Book: mdbook</a> (this one is better)</p>
-<p><a href="https://elijjah-by-example.github.io">Elijjah by Example</a></p>
-<p><a href="https://oluoluolu-gh.gitbook.io/elijjah-by-example/">Elijjah by Example on GitBook</a> (more readable)</p>
+                        <h1><a class="header" href="#the-language-server" id="the-language-server">The Language Server</a></h1>
+<p>An implementation of the <a href="https://en.wikipedia.org/wiki/Language_Server_Protocol">Language Server Protocol</a> for less than full-blown editors.
+This probably won't be necessary on IntelliJ IDEA (which I hope to add support for) or Eclipse IDE, but then again who wants to do all that work?</p>
+<blockquote>
+<p>This is not impemented yet.</p>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="el_doc.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
                         
-                            <a rel="next" href="language-overview.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="el_play.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -206,9 +193,13 @@ The tests need to run run from the root directory, which is done automatically i
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a rel="prev" href="el_doc.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
                 
-                    <a rel="next" href="language-overview.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="el_play.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
