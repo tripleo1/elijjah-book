@@ -20,3 +20,12 @@
     - [Config Files](config_files.md)
     - [elget](el_get.md)
     - [Package Management](package_management.md)
+
+- [Programming a Guessing Game](ch02-00-guessing-game-tutorial.md)
+
+- [Common Programming Concepts](ch03-00-common-programming-concepts.md)
+    - [Variables and Mutability](ch03-01-variables-and-mutability.md)
+    - [Data Types](ch03-02-data-types.md)
+    - [Functions](ch03-03-how-functions-work.md)
+    - [Comments](ch03-04-comments.md)
+    - [Control Flow](ch03-05-control-flow.md)
